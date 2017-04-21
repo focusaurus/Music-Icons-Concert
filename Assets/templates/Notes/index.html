@@ -1,1 +1,13 @@
-<h1>Notes Index</h1>
+<h1>Notes <a class='btn btn-default' href='#/notes/new'></a></h1>
+<div class='form-group'
+  Search: <input type='text' ng-model='search.input.$'>
+</div>
+<mi-category-select ng-model='search.category'
+
+<div class='row'>
+  <div ng-repeat='note in notes | categoryFilter:search.category | filter:search.input' class='col-sm-6'>
+    <h2><a ng-href='#/notes/{{note.id}}'>{{note.title}}</a></h2>
+    <p>{{note.description}}</p>
+    <p><span class='label label-info'>{{note.category.name}}</span></p>
+  </div>
+</div>
