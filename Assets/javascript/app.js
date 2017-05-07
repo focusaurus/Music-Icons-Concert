@@ -15,4 +15,4 @@ io.on('connection', function (socket) {
   });
 });
 
-angular.module('NoteWrangler', ['ngRoute', 'ngResource']);
+
