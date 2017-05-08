@@ -1,25 +1,43 @@
+angular.module('NoteWrangler', []);
 angular.module('NoteWrangler').config(function($routeProvider){
-  $routeProvider.when('/'), {
+  $routeProvider
+
+  .when('/', {
     redirectTo: '/notes'
   })
-  $routeProvider.when('/notes'), {
+
+  .when('/notes', {
     templateURl: '/templates/notes/index.html',
     controller: 'NotesIndexController'
   })
-  $routeProvider.when('/new'), {
+
+  .when('/new', {
     templateURl: '/templates/notes/new.html',
     controller: 'NotesCreateController'
   })
-  $routeProvider.when('/delete'), {
+
+  .when('/delete', {
     templateURl: '/templates/notes/index.html',
     controller: 'NotesDeleteController'
   })
-  $routeProvider.when('/:id'), {
+
+  .when('/:id', {
     templateURl: '/templates/notes/index.html',
     controller: 'NotesShowController'
   })
-  $routeProvider.when('/:id/edit'), {
+
+  .when('/:id/edit', {
     templateURl: '/templates/notes/edit.html',
     controller: 'NotesEditController'
+  })
+
+  .when('/users', {
+    templateURl: '/templates/users/index.html',
+    controller: 'UserIndexController'
+  })
+
+  .when('/users/:id', {
+    templateURl: '/templates/users/show.html',
+    controller: 'UserShowController'
   })
 });

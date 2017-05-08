@@ -5,11 +5,10 @@ angular.module('NoteWrangler').controller('NotesCreateController', function($sco
   $scope.saveNote= function(note){
     $scope.isSubmitting = true;
     note.$save().then(function(){
-      $location.path(/notes);
+      $location.path('/notes');
     }).finally(function(){
     $scope.isSubmitting = false;
     $location.path('/notes');
-  }
-  });
+  })
  }
 });

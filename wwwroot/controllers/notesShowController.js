@@ -4,6 +4,6 @@ angular.module('NoteWrangler').controller('NotesShowController', function(Note, 
   $scope.deleteNote = function(note){
     note.$remove().then(function (){
       $location.path('/notes');
-    };
+    });
   }
 });
